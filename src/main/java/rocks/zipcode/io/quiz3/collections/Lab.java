@@ -3,22 +3,23 @@ package rocks.zipcode.io.quiz3.collections;
 /**
  * @author leon on 10/12/2018.
  */
-public class Lab {
+public class Lab implements Comparable<Lab> {
+    private String name;
+
     public Lab() {
         this(null);
     }
 
     public Lab(String labName) {
+        this.name = labName;
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
-    public void setStatus(LabStatus labStatus) {
-    }
-
-    public LabStatus getStatus() {
-        return null;
+    @Override
+    public int compareTo(Lab o) {
+        return name.compareTo(o.name);
     }
 }
